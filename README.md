@@ -1,17 +1,17 @@
-# 🎬 CINEBOT — Generative AI Movie Recommendation Chatbot
+# CINEBOT - Generative AI Movie Recommendation Chatbot
 
-CINEBOT is a movie-recommendation chatbot built with **Retrieval-Augmented Generation (RAG)**. It combines semantic search over movie metadata with an open-source language model to answer natural-language movie queries and suggest films based on a user's interests, genre preferences, or mood.
+CINEBOT is a movie-recommendation chatbot built with Retrieval-Augmented Generation (RAG). It combines semantic search over movie metadata with an open-source language model to answer natural-language movie queries and suggest films based on a user's interests, genre preferences, or mood.
 
-## ✨ Features
+## Features
 
-- **Natural-language movie queries:** Ask for recommendations using ordinary descriptions, genres, themes, or moods.
-- **Semantic retrieval:** Uses Sentence Transformers to represent movie metadata and user queries as embeddings.
-- **FAISS similarity search:** Retrieves the five closest movie matches from the indexed dataset.
-- **LLM-generated responses:** Uses TinyLlama to turn retrieved movie titles and the user's question into a conversational response.
-- **Interactive interface:** Provides a simple chatbot UI using Gradio.
-- **Movie metadata processing:** Combines movie overviews, genres, keywords, and director information into searchable tags.
+- Natural-language movie queries: Ask for recommendations using ordinary descriptions, genres, themes, or moods.
+- Semantic retrieval: Uses Sentence Transformers to represent movie metadata and user queries as embeddings.
+- FAISS similarity search: Retrieves the five closest movie matches from the indexed dataset.
+- LLM-generated responses: Uses TinyLlama to turn retrieved movie titles and the user's question into a conversational response.
+- Interactive interface: Provides a simple chatbot UI using Gradio.
+- Movie metadata processing: Combines movie overviews, genres, keywords, and director information into searchable tags.
 
-## 🧠 How It Works
+## How It Works
 
 1. Load the TMDB 5000 Movies and Credits CSV files.
 2. Merge the datasets and select the title, overview, genres, keywords, cast, and crew fields.
@@ -23,7 +23,7 @@ CINEBOT is a movie-recommendation chatbot built with **Retrieval-Augmented Gener
 8. Pass the retrieved titles and user query into TinyLlama to generate a response.
 9. Display the response through a Gradio interface.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Technology | Purpose |
 |---|---|
@@ -37,15 +37,15 @@ CINEBOT is a movie-recommendation chatbot built with **Retrieval-Augmented Gener
 | Gradio | Interactive chatbot interface |
 | NumPy | Numerical operations on embeddings |
 
-## 📂 Repository Contents
+## Repository Contents
 
 - `CINEBOT.ipynb` — Notebook containing data preparation, embedding generation, retrieval, language generation, and Gradio UI code.
 - `Explanation.pdf` — Project explanation, architecture, implementation overview, technologies, and example results.
 - `README.md` — Project overview and usage notes.
 
-## 🚀 Running the Notebook
+## Running the Notebook
 
-The notebook was prepared for **Google Colab**.
+The notebook was prepared for Google Colab.
 
 1. Open `CINEBOT.ipynb` in Google Colab.
 2. Run the dependency-installation cells.
@@ -62,19 +62,12 @@ pip install transformers sentence-transformers faiss-cpu langchain gradio accele
 
 Depending on the runtime and available hardware, model downloads and inference may take some time. The notebook uses a `share=True` Gradio launch, which creates a temporary public sharing link; only use this when appropriate for your environment.
 
-## 📊 Dataset and Scope
+## Dataset and Scope
 
 The project uses the **TMDB 5000 Movies** and **TMDB 5000 Credits** datasets. In the notebook, the merged data is reduced to the first 1,000 rows after null values are removed. Search quality and coverage are therefore limited to the subset indexed by the notebook.
 
 The indexed text includes genres, keywords, overview, and director information. Although cast data is extracted during preprocessing, the final `tags` construction in the notebook does not include cast names.
 
-## ⚠️ Notes and Limitations
-
-- The system retrieves movie titles and uses those titles as context for TinyLlama; it does not pass full movie metadata into the generation prompt.
-- Generated responses can contain inaccurate details or recommendations. Verify movie information independently when accuracy matters.
-- Results depend on the dataset subset, embedding model, nearest-neighbor search, and language-model output.
-- The notebook is designed for Colab and expects the CSV files to be uploaded manually.
-- The notebook uses an open-source model, but available memory, compute, and runtime configuration can affect execution.
 
 ## 🔮 Possible Future Improvements
 
@@ -89,6 +82,3 @@ The indexed text includes genres, keywords, overview, and director information. 
 
 See [`Explanation.pdf`](Explanation.pdf) for the project's written explanation, architecture, implementation steps, and sample interface results.
 
----
-
-**Project:** CINEBOT — AI Movie Chatbot using RAG and an Open-Source LLM
