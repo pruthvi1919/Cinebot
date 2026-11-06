@@ -1,8 +1,8 @@
-# CINEBOT - Generative AI Movie Recommendation Chatbot
+CINEBOT - Generative AI Movie Recommendation Chatbot
 
 CINEBOT is a movie-recommendation chatbot built with Retrieval-Augmented Generation (RAG). It combines semantic search over movie metadata with an open-source language model to answer natural-language movie queries and suggest films based on a user's interests, genre preferences, or mood.
 
-## Features
+Features
 
 - Natural-language movie queries: Ask for recommendations using ordinary descriptions, genres, themes, or moods.
 - Semantic retrieval: Uses Sentence Transformers to represent movie metadata and user queries as embeddings.
@@ -11,7 +11,7 @@ CINEBOT is a movie-recommendation chatbot built with Retrieval-Augmented Generat
 - Interactive interface: Provides a simple chatbot UI using Gradio.
 - Movie metadata processing: Combines movie overviews, genres, keywords, and director information into searchable tags.
 
-## How It Works
+How It Works
 
 1. Load the TMDB 5000 Movies and Credits CSV files.
 2. Merge the datasets and select the title, overview, genres, keywords, cast, and crew fields.
@@ -23,7 +23,7 @@ CINEBOT is a movie-recommendation chatbot built with Retrieval-Augmented Generat
 8. Pass the retrieved titles and user query into TinyLlama to generate a response.
 9. Display the response through a Gradio interface.
 
-## Tech Stack
+Tech Stack
 
 | Technology | Purpose |
 |---|---|
@@ -37,13 +37,13 @@ CINEBOT is a movie-recommendation chatbot built with Retrieval-Augmented Generat
 | Gradio | Interactive chatbot interface |
 | NumPy | Numerical operations on embeddings |
 
-## Repository Contents
+Repository Contents
 
 - `CINEBOT.ipynb` — Notebook containing data preparation, embedding generation, retrieval, language generation, and Gradio UI code.
 - `Explanation.pdf` — Project explanation, architecture, implementation overview, technologies, and example results.
 - `README.md` — Project overview and usage notes.
 
-## Running the Notebook
+Running the Notebook
 
 The notebook was prepared for Google Colab.
 
@@ -62,14 +62,14 @@ pip install transformers sentence-transformers faiss-cpu langchain gradio accele
 
 Depending on the runtime and available hardware, model downloads and inference may take some time. The notebook uses a `share=True` Gradio launch, which creates a temporary public sharing link; only use this when appropriate for your environment.
 
-## Dataset and Scope
+Dataset and Scope
 
 The project uses the **TMDB 5000 Movies** and **TMDB 5000 Credits** datasets. In the notebook, the merged data is reduced to the first 1,000 rows after null values are removed. Search quality and coverage are therefore limited to the subset indexed by the notebook.
 
 The indexed text includes genres, keywords, overview, and director information. Although cast data is extracted during preprocessing, the final `tags` construction in the notebook does not include cast names.
 
 
-## 🔮 Possible Future Improvements
+Possible Future Improvements
 
 - Index the full dataset instead of only the first 1,000 rows.
 - Include cast and additional useful metadata in the tags.
@@ -78,7 +78,7 @@ The indexed text includes genres, keywords, overview, and director information. 
 - Add conversation history and preference-aware recommendations.
 - Evaluate retrieval relevance and generated-answer quality systematically.
 
-## 📄 Project Documentation
+Project Documentation
 
 See [`Explanation.pdf`](Explanation.pdf) for the project's written explanation, architecture, implementation steps, and sample interface results.
 
