@@ -11,7 +11,7 @@ Features
 - Interactive interface: Provides a simple chatbot UI using Gradio.
 - Movie metadata processing: Combines movie overviews, genres, keywords, and director information into searchable tags.
 
-How It Works
+Working
 
 1. Load the TMDB 5000 Movies and Credits CSV files.
 2. Merge the datasets and select the title, overview, genres, keywords, cast, and crew fields.
