@@ -29,7 +29,6 @@ Tech Stack
 |---|---|
 | Python | Main programming language |
 | Google Colab / Jupyter Notebook | Development and execution environment |
-| Pandas | Loading, merging, and preprocessing movie data |
 | Sentence Transformers (`all-MiniLM-L6-v2`) | Text embedding generation |
 | FAISS (`faiss-cpu`) | Vector similarity search |
 | Hugging Face Transformers | Loading and running the language model |
